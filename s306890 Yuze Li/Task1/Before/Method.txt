@@ -1,0 +1,5 @@
+Scenario:
+In a banking system, a bank account class BankAccount and an account interest class AccountInterest. AccountInterest are used more frequently using the calculateInterestRate() method. We need to move the calculateInterestRate() method from the BankAccount class to the AccountInterest class. 
+
+The pattern:
+For this Feature Envy, I'd like using Move method. Move the method to a position that is more suitable for it. Put the CalculateInterestRate method in a class that is often used and suitable for it, making the overall code clear.

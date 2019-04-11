@@ -1,0 +1,3 @@
+Using Replace Temp with Query to refactoring old code.
+
+The program saves the result of an expression as a temporary variable. I refine this expression into a separate function and replace all the reference points of this temporary variable with the call to the new function. The new function can then be used by other functions.

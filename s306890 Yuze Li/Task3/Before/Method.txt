@@ -1,0 +1,1 @@
+In a larg class, A class does a lot of things. Create a new class and move related fields and functions from the old class to the new class.
