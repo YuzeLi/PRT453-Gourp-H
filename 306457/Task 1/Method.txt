@@ -1,0 +1,1 @@
+Use of extract method to separate functions that can be grouped together
