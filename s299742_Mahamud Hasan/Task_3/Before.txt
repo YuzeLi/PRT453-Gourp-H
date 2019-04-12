@@ -1,0 +1,29 @@
+ public class CustomerService
+{
+public decimal CalculateOrderDiscount(IEnumerable<Product> products,
+Customer customer)
+{
+// do work
+}
+
+public bool CustomerIsValid(Customer customer, Order order)
+{
+ // do work
+}
+
+public IEnumerable<string> GatherOrderErrors(IEnumerable<Product> products,
+Customer customer)
+{
+ // do work
+}
+
+public void Register(Customer customer)
+{
+ // do work
+}
+
+public void ForgotPassword(Customer customer)
+{
+// do work
+}
+}
