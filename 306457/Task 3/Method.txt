@@ -1,0 +1,1 @@
+Data are passing through a different method- middle man.When there are more number of datas and method this creates problem so We need to remove middle man to simplify data transfer and storage.
