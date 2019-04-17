@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace BreakMethod_Before
 {
-    public class CashRegisterBefore
+    public class CashRegister
     {
-        public CashRegisterBefore()
+        public CashRegister()
         {
             Tax = 0.06m;
         }
 
         private decimal Tax { get; set; }
 
+        /// <summary>
+        /// This Method doing lots of logical calculations
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="products"></param>
+        /// <param name="payment"></param>
         public void AcceptPayment(Customer customer, IEnumerable<Product> products, decimal payment)
         {
             decimal subTotal = 0m;
