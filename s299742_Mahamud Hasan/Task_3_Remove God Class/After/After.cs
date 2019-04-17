@@ -19,7 +19,6 @@ namespace GodClass
             PayEmployee(timeSheets, currentEmployee); // Load employee payment information
             Console.WriteLine();
             Console.Write("Press any key to exit...............");
-            Console.ReadKey();
         }
 
         /// <summary>
