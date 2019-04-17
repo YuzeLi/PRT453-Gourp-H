@@ -1,4 +1,4 @@
-﻿using GodClassLibrary;
+using GodClassLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace GodClass
             List<CustomerModel> customers = DataAccess.GetCustomer(); // Load Customer's information
             EmployeeModel currentEmployee = DataAccess.GetCurrentEmployee(); // Load Employee's information
             customers.ForEach(x => BillCustomers(timeSheets, x));
-            PayEmployee(timeSheets, currentEmployee);
+            PayEmployee(timeSheets, currentEmployee); // Load employee payment information
             Console.WriteLine();
             Console.Write("Press any key to exit...............");
             Console.ReadKey();
@@ -32,7 +32,7 @@ namespace GodClass
             decimal totalPay = TimeSheetProcessor.calculateEmployeePay(timeSheets, employee);
             Console.WriteLine($"You will get paid${totalPay} for your time.");
         }
-
+        
         /// <summary>
         /// This method calculating the customer's bill
         /// </summary>
@@ -45,7 +45,7 @@ namespace GodClass
             Console.WriteLine("Your bill is &" + (decimal)totalHours * customer.hourlyRateToBill + "for the hours worked.");
             Console.WriteLine();
         }
-
+        
         /// <summary>
         /// Load employees work time
         /// </summary>
