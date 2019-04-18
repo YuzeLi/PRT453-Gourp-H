@@ -1,0 +1,2 @@
+Extract interface means that more than one class uses methods or properties in a class together. Then we can present these methods and properties as a single interface. This has the advantage of relieving code dependencies and reducing coupling.
+In this case the RegistrationProcessor class only uses the Create method and the Total field in the ClassRegistration class. So consider making them an interface to call the RegistrationProcessor.
