@@ -1,0 +1,4 @@
+A class has too many methods that simply delegate to other objects.
+Delete these methods and force the client to call the end methods directly.
+There are times when there are some "ghost classes" in our code. Design pattern master Martin Fowler calls them "middle man" classes. The "middle man" class doesn't do anything other than calling other objects. If necessary, we can remove them from the code so that the two classes of the interaction are directly related.
+In this case, the Consumer class wants to get the data of the AccountDataProvider, but the middle is involved in the AccountManager class that has no effect to associate, so we should remove it.
