@@ -1,0 +1,3 @@
+We have a conditional that performs various actions depending on object type or properties.
+The function show in the base class outputs different information according to the value of arg.
+We can use Replace Conditional with Polymorphism to refactor it. It is different depending on the arg worth.
