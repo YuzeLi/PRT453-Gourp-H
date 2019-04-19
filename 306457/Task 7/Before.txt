@@ -1,0 +1,22 @@
+class Account {
+  // ...
+  private int balance;
+
+  public int withdraw(int amount) {
+    if (amount > balance) {
+      return -1;
+    }
+    else {
+      balance -= amount;
+      return 0;
+    }
+  }
+}
+
+// Somewhere in client code.
+if (account.withdraw(amount) == -1) {
+  handleOverdrawn();
+}
+else {
+  doTheUsualThing();
+}
