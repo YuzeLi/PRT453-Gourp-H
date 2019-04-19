@@ -1,24 +1,19 @@
-class Person {
-  private String name;
-  private String officeAreaCode;
-  private String officeNumber;
+void printOwing() {
+  Enumeration elements = orders.elements();
+  double outstanding = 0.0;
 
-  public String getName() {
-    return name;
+  // print banner
+  System.out.println ("*****************************");
+  System.out.println ("****** Customer totals ******");
+  System.out.println ("*****************************");
+
+  // print owings
+  while (elements.hasMoreElements()) {
+    Order each = (Order) elements.nextElement();
+    outstanding += each.getAmount();
   }
-  public String getTelephoneNumber() {
-    return ("(" + officeAreaCode + ") " + officeNumber);
-  }
-  public String getOfficeAreaCode() {
-    return officeAreaCode;
-  }
-  public void setOfficeAreaCode(String arg) {
-    officeAreaCode = arg;
-  }
-  public String getOfficeNumber() {
-    return officeNumber;
-  }
-  public void setOfficeNumber(String arg) {
-    officeNumber = arg;
-  }
+
+  // print details
+  System.out.println("name: " + name);
+  System.out.println("amount: " + outstanding);
 }
