@@ -4,46 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtractSubClass
+namespace EncapsulateConditional
 {
-    class JobItem
-    {
-        public int Quantity { get; private set; }
-        public Employee Employee { get; private set; }
-        public bool IsLabour { get; set; }
-        private int _unitPrice;
-
-        public int UnitPrice
-        {
-            get
-            {
-                return IsLabour ? Employee.Rate : UnitPrice;
-            }
-            set
-            {
-                _unitPrice = value;
-            }
-        }
-
-        public int TotalPrice
-        {
-            get { return UnitPrice * Quantity; }
-        }
-
-        public JobItem(int unitPrice, int quantity, bool isLabour, Employee employee)
-        {
-            UnitPrice = unitPrice;
-            Quantity = quantity;
-            IsLabour = isLabour;
-            Employee = employee;
-        }
-
-    }
-
-    class Employee
-    {
-        public int Rate { get; internal set; }
-    }
-
-
+   1: public class RemoteControl
+2: {
+3: private string[] Functions { get; set; }
+4: private string Name { get; set; }
+5: private int CreatedYear { get; set; }
+6:
+7: public string PerformCoolFunction(string buttonPressed)
+8: {
+9: // Determine if we are controlling some extra function
+10: // that requires special conditions
+11: if (Functions.Length > 1 && Name == "RCA" &&
+CreatedYear > DateTime.Now.Year - 2)
+12: return "doSomething";
+13: }
+14: }
 }
