@@ -1,0 +1,2 @@
+All too often we do not name method/class/parameter’s function is. When this occurs, assumptions are made and bugs are introduced to the system. As simple of a refactoring this seems, it is one of the most important to leverage. 
+We have a class/method/parameter that all have very non-descriptive, obscure names. They can be interpreted in a number of different ways. Applying this refactoring is as simple as renaming the items at hand to be more descriptive and convey what exactly they do. 
