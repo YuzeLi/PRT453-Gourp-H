@@ -1,0 +1,9 @@
+Motivation to Refactor:
+As a scrum member, I can often see that inheritance methods are incorrectly used in some scenarios. 
+Inheritance should only be used in a logical environment, but it is usually used for convenience. It makes the complex inheritance hierarchy meaningless.
+
+Pattern/refactoring method:
+In this case, Car is not "CarWashing", so there is no meaning as an inheritance hierarchy.
+We can refactor by initializing a CarWashing instance in the Car constructor and delegating the call to the class instead of inheriting it. 
+Inheritance should only be used to guarantee the inheritance scheme.
+So Replace Inheritance with Delegation will be the good method for this refactoring.

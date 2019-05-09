@@ -1,0 +1,10 @@
+Motivation to Refactor:
+As a scrum member, this refactoring is useful if we are trying to introduce unit tests into the code base, because we need to test "seams" to properly mock or isolated areas that you don't want to test. 
+In this example, we have some client code that uses static classes to solve some work. The problem encountered in unit testing is that there is no way to simulate static classes from unit tests. 
+To solve this problem, we can apply a wrapper interface around static to create a seam and break the dependency static.
+
+Pattern/refactoring method:
+In this case, I would like to use Break Dependencies method. 
+All we have to do is apply this refactoring method that introduces an interface and class that simply calls the underlying static class. 
+So the behavior is still the same, just the way it is called has changed. 
+This will be a good starting point for starting refactoring and an easy way to add unit tests to our code base.
