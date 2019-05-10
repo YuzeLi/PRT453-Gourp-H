@@ -7,38 +7,28 @@ using System.Threading.Tasks;
 
 namespace Task_10_ExtrctMethodObject
 {
-    public class OrderLineItem
-    {
-        public decimal Price { get; private set; }
-    }
+public class Order
+{
+public void Checkout(IEnumerable<Product> products, Customer customer)
+{
+if (!customer.IsNotFlagged)
+{
+// the customer account is flagged
+// log some errors and return
+return;
+ }
 
-    public class Order
-    {
-        private IList<OrderLineItem> OrderLineItems { get; set; }
-        private IList<decimal> Discounts { get; set; }
-        private decimal Tax { get; set; }
+ // normal order processing
+ }
+ }
 
-        public decimal Calculate()
-        {
-            decimal subTotal = 0m;
+ public class Customer
+ {
+ public decimal Balance { get; private set; }
 
-            // Total up line items
-            foreach (OrderLineItem lineItem in OrderLineItems)
-            {
-                subTotal += lineItem.Price;
-            }
-
-            // Subtract Discounts
-            foreach (decimal discount in Discounts)
-                subTotal -= discount;
-
-            // Calculate Tax
-            decimal tax = subTotal * Tax;
-
-            // Calculate GrandTotal
-            decimal grandTotal = subTotal + tax;
-
-            return grandTotal;
-        }
-    }
+ public bool IsNotFlagged
+ {
+ get { return Balance < 30m; }
+ }
+ }
 }

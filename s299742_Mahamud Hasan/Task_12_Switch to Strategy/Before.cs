@@ -7,38 +7,55 @@ using System.Threading.Tasks;
 
 namespace Task_10_ExtrctMethodObject
 {
-    public class OrderLineItem
-    {
-        public decimal Price { get; private set; }
-    }
+namespace LosTechies.DaysOfRefactoring.SwitchToStrategy.Before
+{
+public class ClientCode
+{
+public decimal CalculateShipping()
+{
+ShippingInfo shippingInfo = new ShippingInfo();
+return shippingInfo.CalculateShippingAmount(State.Alaska);
+}
+ }
 
-    public class Order
-    {
-        private IList<OrderLineItem> OrderLineItems { get; set; }
-        private IList<decimal> Discounts { get; set; }
-        private decimal Tax { get; set; }
+ public enum State
+ {
+ Alaska,
+ NewYork,
+ Florida
+ }
 
-        public decimal Calculate()
-        {
-            decimal subTotal = 0m;
+ public class ShippingInfo
+ {
+ public decimal CalculateShippingAmount(State shipToState)
+ {
+ switch(shipToState)
+ {
+ case State.Alaska:
+ return GetAlaskaShippingAmount();
+ case State.NewYork:
+ return GetNewYorkShippingAmount();
+ case State.Florida:
+ return GetFloridaShippingAmount();
+ default:
+ return 0m;
+ }
+ }
 
-            // Total up line items
-            foreach (OrderLineItem lineItem in OrderLineItems)
-            {
-                subTotal += lineItem.Price;
-            }
+ private decimal GetAlaskaShippingAmount()
+ {
+ return 15m;
+ }
 
-            // Subtract Discounts
-            foreach (decimal discount in Discounts)
-                subTotal -= discount;
+ private decimal GetNewYorkShippingAmount()
+ {
+ return 10m;
+ }
 
-            // Calculate Tax
-            decimal tax = subTotal * Tax;
-
-            // Calculate GrandTotal
-            decimal grandTotal = subTotal + tax;
-
-            return grandTotal;
-        }
-    }
+ private decimal GetFloridaShippingAmount()
+ {
+ return 3m;
+ }
+ }
+ }
 }

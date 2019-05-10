@@ -7,38 +7,41 @@ using System.Threading.Tasks;
 
 namespace Task_10_ExtrctMethodObject
 {
-    public class OrderLineItem
-    {
-        public decimal Price { get; private set; }
-    }
+ public class Consumer
+{
+public AccountManager AccountManager { get; set; }
 
-    public class Order
-    {
-        private IList<OrderLineItem> OrderLineItems { get; set; }
-        private IList<decimal> Discounts { get; set; }
-        private decimal Tax { get; set; }
+public Consumer(AccountManager accountManager)
+{
+AccountManager = accountManager;
+}
 
-        public decimal Calculate()
-        {
-            decimal subTotal = 0m;
+ public void Get(int id)
+ {
+ Account account = AccountManager.GetAccount(id);
+ }
+ }
 
-            // Total up line items
-            foreach (OrderLineItem lineItem in OrderLineItems)
-            {
-                subTotal += lineItem.Price;
-            }
+ public class AccountManager
+ {
+ public AccountDataProvider DataProvider { get; set; }
 
-            // Subtract Discounts
-            foreach (decimal discount in Discounts)
-                subTotal -= discount;
+ public AccountManager(AccountDataProvider dataProvider)
+ {
+ DataProvider = dataProvider;
+ }
 
-            // Calculate Tax
-            decimal tax = subTotal * Tax;
+ public Account GetAccount(int id)
+ {
+ return DataProvider.GetAccount(id);
+ }
+ }
 
-            // Calculate GrandTotal
-            decimal grandTotal = subTotal + tax;
-
-            return grandTotal;
-        }
-    }
+ public class AccountDataProvider
+ {
+ public Account GetAccount(int id)
+ {
+ // get account
+ }
+ }
 }
