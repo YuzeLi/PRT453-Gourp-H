@@ -1,0 +1,8 @@
+Motivation to Refactor:
+As a scrum member, this is probably one of the most commonly used refactorings in the form of methods used in multiple places. 
+Duplication is often added to the code base by developers who are lazy or try to generate as much code as possible as quickly as possible.
+
+
+Pattern/refactoring method:
+In this case, I would like to use Remove Duplication method. 
+We move the duplicated code to a shared method and you can see no more duplication. It can leads to much fewer bugs because we aren’t copy/pasting the bugs throughout the past code.
