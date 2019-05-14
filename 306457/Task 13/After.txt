@@ -1,0 +1,34 @@
+class Employee {
+  // ...
+  static final int ENGINEER = 0;
+  static final int SALESMAN = 1;
+  static final int MANAGER = 2;
+
+  public static Employee create(int type) {
+    switch (type) {
+      case ENGINEER:
+        return new Engineer();
+      case SALESMAN:
+        return new Salesman();
+      case MANAGER:
+        return new Manager();
+      default:
+        return new Employee(type);
+    }
+  }
+  private Employee(int type) {
+    this.type = type;
+  }
+}
+class Engineer extends Employee {
+  // ...
+}
+class Salesman extends Employee {
+  // ...
+}
+class Manager extends Employee {
+  // ...
+}
+
+// Some clinet code.
+Employee eng = Employee.create(Employee.ENGINEER);
