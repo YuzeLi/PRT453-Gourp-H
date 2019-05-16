@@ -1,0 +1,7 @@
+Motivation to Refactor:
+As a scrum member, the arrowhead antipattern is when you have nested conditionals so deep that they form an arrowhead of code. The Arrow Ani-pattern is a name given to the resulting structure produced by using excessive nested conditional operators. 
+
+
+Pattern/refactoring method:
+In this case, I would like to use Remove Arrowhead Antipattern. 
+Refactoring away from the arrowhead antipattern is as simple as swapping the conditionals to leave the method as soon as possible. Refactoring in this manner often starts to look like Design By Contract checks to evaluate conditions before performing the work of the method.
