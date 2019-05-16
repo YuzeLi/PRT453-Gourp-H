@@ -2,13 +2,11 @@
     {
         public void Checkout(IEnumerable<Product> products, Emlpoyee employee)
         {
-            if (!employee.IsNotFlagged)
+            if (employee.IsFlagged)
             {
-                // the customer account is flagged
-                // log some errors and return
                 return;
             }
-            if (!employee.IsNotPresent)
+            if (employee.IsPresent)
             {
                 return;
             }
@@ -18,11 +16,11 @@
     {
         public decimal Balance { get; private set; }
         public bool Present { get; private set; }
-        public bool IsNotFlagged
+        public bool IsFlagged
         {
             get { return Balance < 30m; }
         }
-        public bool IsNotPresent
+        public bool IsPresent
         {
             get { return Present = true; }
         }
