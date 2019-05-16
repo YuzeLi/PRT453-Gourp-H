@@ -1,0 +1,60 @@
+class pizzaShop
+{
+  public:
+    // Factory Method
+    static pizzaShop *makePizza(int choice);
+    virtual void printBill() = 0;
+};
+
+int main()
+{
+  vector<pizzaShop*> roles;
+  int choice;
+  while (true)
+  {
+    cout << "BeefPizza(1) VegetablePizza(2) CickenPizza(3) Go(0): ";
+    cin >> choice;
+    if (choice == 0)
+      break;
+    roles.push_back(pizzaShop::makePizza(choice));
+  }
+  for (int i = 0; i < roles.size(); i++)
+    roles[i]->printBill();
+  for (int i = 0; i < roles.size(); i++)
+    delete roles[i];
+}
+
+class BeefPizza: public pizzaShop
+{
+  public:
+    void printBill()
+    {
+        cout << "Pirce is 15 AUD$ \n";
+    }
+};
+class VegetablePizza: public pizzaShop
+{
+  public:
+    void printBill()
+    {
+        cout << "Pirce is 13 AUD$ \n";
+    }
+};
+class CickenPizza: public pizzaShop
+{
+  public:
+    void printBill()
+    {
+        cout << "Pirce is 12 AUD$ \n";
+    }
+};
+
+Stooge *Stooge::make_stooge(int choice)
+{
+  if (choice == 1)
+    return new BeefPizza;
+  else if (choice == 2)
+    return new VegetablePizza;
+  else
+    return new CickenPizza;
+}

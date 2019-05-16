@@ -1,0 +1,54 @@
+class pizzaShop
+{
+  public:
+    virtual void printBill() = 0;
+};
+
+class BeefPizza: public pizzaShop
+{
+  public:
+    void printBill()
+    {
+        cout << "Pirce is 15 AUD$ \n";
+    }
+};
+class VegetablePizza: public pizzaShop
+{
+  public:
+    void printBill()
+    {
+        cout << "Pirce is 13 AUD$ \n";
+    }
+};
+class CickenPizza: public pizzaShop
+{
+  public:
+    void printBill()
+    {
+        cout << "Pirce is 12 AUD$ \n";
+    }
+};
+
+int main()
+{
+  vector<pizzaShop*> roles;
+  int choice;
+
+  while (true)
+  {
+    cout << "BeefPizza(1) VegetablePizza(2) CickenPizza(3) Go(0): ";
+    cin >> choice;
+    if (choice == 0)
+      break;
+    else if (choice == 1)
+      roles.push_back(new BeefPizza);
+    else if (choice == 2)
+      roles.push_back(new VegetablePizza);
+    else
+      roles.push_back(new CickenPizza);
+  }
+  for (int i = 0; i < roles.size(); i++)
+    roles[i]->printBill();
+  for (int i = 0; i < roles.size(); i++)
+    delete roles[i];
+}
