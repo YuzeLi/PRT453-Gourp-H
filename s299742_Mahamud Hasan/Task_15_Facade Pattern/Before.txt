@@ -1,0 +1,70 @@
+class Program
+    {
+        private static int coldAppID;
+        private static int hotEntreeID;
+         
+        static void Main(string[] args)
+        {
+            var appID = int.Parse(Console.ReadLine());
+            Console.WriteLine("That's a good one.  What entree would you like? (1-20):");
+            var entreeID = int.Parse(Console.ReadLine());
+            Console.WriteLine("A great choice!  Finally, what drink would you like? (1-60):");
+            var drinkID = int.Parse(Console.ReadLine());
+            Console.WriteLine("I'll get that order in right away.");
+            Order order = new Order();
+            ColdPrep _coldPrep = new ColdPrep();
+            order.Appetizer = _coldPrep.PrepDish(coldAppID);
+            HotPrep _hotPrep = new HotPrep();
+            order.Entree = _hotPrep.PrepDish(hotEntreeID);
+            Bar _bar = new Bar();
+            order.Drink = _bar.PrepDish(drinkID);
+            Console.ReadKey();
+        }
+    }
+    interface KitchenSection
+    {
+        FoodItem PrepDish(int DishID);
+    }
+    class FoodItem { public int DishID; }
+    class ColdPrep : KitchenSection
+    {
+        public FoodItem PrepDish(int dishID)
+        {
+            Console.WriteLine("Cold Prep is preparing Appetizer #" + dishID);
+            //Go prep the appetizer
+            return new FoodItem()
+            {
+                DishID = dishID
+            };
+        }
+    }
+    class HotPrep : KitchenSection
+    {
+        public FoodItem PrepDish(int dishID)
+        {
+            Console.WriteLine("Hot Prep is preparing Entree #" + dishID);
+            //Go prep the entree
+            return new FoodItem()
+            {
+                DishID = dishID
+            };
+        }
+    }
+    class Bar : KitchenSection
+    {
+        public FoodItem PrepDish(int dishID)
+        {
+            Console.WriteLine("The Bar is preparing Drink #" + dishID);
+            //Go mix the drink
+            return new FoodItem()
+            {
+                DishID = dishID
+            };
+        }
+    }
+    class Order
+    {
+        public FoodItem Appetizer { get; set; }
+        public FoodItem Entree { get; set; }
+        public FoodItem Drink { get; set; }
+    }
