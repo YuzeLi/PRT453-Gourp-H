@@ -32,6 +32,7 @@ class BeefPizza: public pizzaShop
         cout << "Pirce is 15 AUD$ \n";
     }
 };
+
 class VegetablePizza: public pizzaShop
 {
   public:
@@ -40,6 +41,7 @@ class VegetablePizza: public pizzaShop
         cout << "Pirce is 13 AUD$ \n";
     }
 };
+
 class CickenPizza: public pizzaShop
 {
   public:
