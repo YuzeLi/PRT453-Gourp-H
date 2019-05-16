@@ -1,0 +1,37 @@
+ public class PizzaShop
+    {
+        public DeliveryManager deliveryManager { get; set; }
+        public PizzaShop(DeliveryManager objdeliveryManager)
+        {
+            deliveryManager = objdeliveryManager;
+        }
+        public void Get(int id)
+        {
+            HomeDelivery account = deliveryManager.GetPizza(id);
+        }
+    }
+
+    public class DeliveryManager
+    {
+        public HomeDeliveryProvider HomeDeliveryProvider { get; set; }
+        public DeliveryManager(HomeDeliveryProvider objHomeDeliveryProvider)
+        {
+            HomeDeliveryProvider = objHomeDeliveryProvider;
+        }
+        public HomeDelivery GetPizza(int id)
+        {
+            return HomeDeliveryProvider.GetPizza(id);
+        }
+    }
+
+    public class HomeDeliveryProvider
+    {
+        public HomeDelivery GetPizza(int id)
+        {
+            HomeDelivery objHomeDelivery=new HomeDelivery();
+            return objHomeDelivery;
+        }
+    }
+    public class HomeDelivery
+    {
+    }

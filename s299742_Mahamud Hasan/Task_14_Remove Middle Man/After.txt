@@ -1,0 +1,24 @@
+public class PizzaShop
+{
+    public HomeDeliveryProvider HomeDeliveryProvider { get; set; }
+    public PizzaShop(HomeDeliveryProvider objDeliveryProvider)
+    {
+        HomeDeliveryProvider = objDeliveryProvider;
+    }
+    public void Get(int id)
+    {
+        HomeDelivery account = HomeDeliveryProvider.GetPizza(id);
+    }
+}
+
+public class HomeDeliveryProvider
+{
+    public HomeDelivery GetPizza(int id)
+    {
+        // get Pizza
+    }
+}
+
+public class HomeDelivery
+{
+}
