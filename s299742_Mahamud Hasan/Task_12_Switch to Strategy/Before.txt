@@ -1,0 +1,28 @@
+class Program
+   {
+    public enum Title
+    {
+        Mr,
+        Mrs,
+        Doctor,
+    }
+ 
+    static void Main(string[] args)
+    {
+        Title objtitle = Title.Doctor;
+        switch (title)
+        {
+            case Title.Mr:
+                // do something
+                break;
+            case Title.Mrs:
+                // do something
+                break;
+            case Title.Doctor:
+                // do something
+                break;
+            default:
+                break;
+        }
+    }
+}
