@@ -6,9 +6,18 @@ class pizzaShop
     virtual void printBill() = 0;
 };
 
+pizzaShop *pizzaShop::make_pizza(int choice)
+{
+  if (choice == 1)
+    return new BeefPizza;
+  else if (choice == 2)
+    return new VegetablePizza;
+  else
+    return new CickenPizza;
+}
+
 int main()
 {
-  vector<pizzaShop*> roles;
   int choice;
   while (true)
   {
@@ -32,7 +41,6 @@ class BeefPizza: public pizzaShop
         cout << "Pirce is 15 AUD$ \n";
     }
 };
-
 class VegetablePizza: public pizzaShop
 {
   public:
@@ -41,7 +49,6 @@ class VegetablePizza: public pizzaShop
         cout << "Pirce is 13 AUD$ \n";
     }
 };
-
 class CickenPizza: public pizzaShop
 {
   public:
@@ -50,13 +57,3 @@ class CickenPizza: public pizzaShop
         cout << "Pirce is 12 AUD$ \n";
     }
 };
-
-pizzaShop *pizzaShop::make_pizza(int choice)
-{
-  if (choice == 1)
-    return new BeefPizza;
-  else if (choice == 2)
-    return new VegetablePizza;
-  else
-    return new CickenPizza;
-}
