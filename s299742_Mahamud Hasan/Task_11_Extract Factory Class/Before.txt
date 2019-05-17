@@ -31,9 +31,7 @@ class CickenPizza: public pizzaShop
 
 int main()
 {
-  vector<pizzaShop*> roles;
   int choice;
-
   while (true)
   {
     cout << "BeefPizza(1) VegetablePizza(2) CickenPizza(3) Go(0): ";
@@ -47,8 +45,4 @@ int main()
     else
       roles.push_back(new CickenPizza);
   }
-  for (int i = 0; i < roles.size(); i++)
-    roles[i]->printBill();
-  for (int i = 0; i < roles.size(); i++)
-    delete roles[i];
 }
