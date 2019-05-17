@@ -51,7 +51,7 @@ class CickenPizza: public pizzaShop
     }
 };
 
-Stooge *Stooge::make_stooge(int choice)
+pizzaShop *pizzaShop::make_pizza(int choice)
 {
   if (choice == 1)
     return new BeefPizza;
