@@ -6,7 +6,7 @@ public class CarWashing
 	 }
  }
 
-public class Child
+public class Car
  {
 	 private CarWashing CarWashing { get; set; }
 
