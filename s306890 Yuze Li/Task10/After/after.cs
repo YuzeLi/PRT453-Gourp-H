@@ -15,7 +15,7 @@ public class Car
 		 CarWashing = new CarWashing();
 	 }
 	
- 	 public string WashHands()
+ 	 public string WashCars()
  	 {
 	 	 return CarWashing.WashCar();
  	 }
